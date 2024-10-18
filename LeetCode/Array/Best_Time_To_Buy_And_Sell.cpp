@@ -5,22 +5,17 @@ using namespace std;
 class Solution {
 public:
     int maxProfit(vector<int>& prices) {
-        if (prices.empty()) return 0;
+        int buyPrice = prices[0];
+        int profit = 0;
 
-        int min_price = prices[0];
-        int max_profit = 0;
+        for (int i = 1; i < prices.size(); i++) {
+            if (buyPrice > prices[i]) {
+                buyPrice = prices[i];
+            }
 
-        for (int price : prices) {
-            // Update the minimum price seen so far
-            min_price = min(min_price, price);
-
-            // Calculate the profit if selling at the current price
-            int profit = price - min_price;
-
-            // Update the maximum profit if this profit is greater
-            max_profit = max(max_profit, profit);
+            profit = max(profit, prices[i] - buyPrice);
         }
 
-        return max_profit;
+        return profit;        
     }
 };
