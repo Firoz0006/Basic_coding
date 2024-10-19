@@ -31,3 +31,15 @@ public:
         return res;
     }
 };
+int main(){
+    Solution s;
+    vector<int> nums={-1,0,1,2,-1,-4};
+    vector<vector<int>> res=s.threeSum(nums);
+    for(auto x:res){
+        for(auto y:x){
+            cout<<y<<" ";
+        }
+        cout<<endl;
+    }
+    return 0;
+}
