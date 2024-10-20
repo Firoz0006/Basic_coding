@@ -20,3 +20,8 @@ public:
         
     }
 };
+int main(){
+    Solution s;
+    vector<int> nums={1,2,3,2,1};
+    cout<<"Duplicate no:"<<s.containsDuplicate(nums)<<endl;
+}

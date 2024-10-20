@@ -2,7 +2,7 @@
 using namespace std;
 class temp{
 	int a;
-int b;
+	int b;
 public:
 int solve(int input){
 	a=input;
