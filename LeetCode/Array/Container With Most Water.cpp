@@ -53,8 +53,8 @@ public:
 
         while(lp<rp){
             int w=rp-lp;
-            int ht=min(height[lp],height[rp]);
-            int area=w*ht;
+            int hit=min(height[lp],height[rp]);
+            int area=w*hit;
             maxArea=max(maxArea,area);
 
             height[lp]<height[rp]?lp++:rp--;
@@ -67,7 +67,7 @@ public:
 
 int main(){
     Solution s;
-    vector<int> height={1,8,6,2,5,4,8,3,7};
+    vector<int> height={1,8,6,2,5,4,3,7,9};
     cout<<s.maxArea(height);
     return 0;
 }

@@ -20,3 +20,11 @@ public:
         
     }
 };
+int main(){
+    Solution s;
+    vector<int> arr={3,4,5,1,2};
+    cout<<s.findMin(arr);
+    return 0;
+    
+
+}
