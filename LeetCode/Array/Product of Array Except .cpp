@@ -6,18 +6,27 @@ using namespace std;
 class Solution {
 public:
     vector<int> productExceptSelf(vector<int>& nums) {
-        int pre=1;
-        vector<int> preprod(nums.size(),1);
+        int n = nums.size();
+        vector<int> res(n, 1);
+        for (int i = 1; i < n; i++) {
+            res[i] = res[i - 1] * nums[i - 1];
+        }
+        int right = 1;
+        for (int i = n - 1; i >= 0; i--) {
+            res[i] *= right;
+            right *= nums[i];
+        }
+        return res;
 
-        for(int i=0; i<nums.size(); i++){
-            preprod[i]=pre;
-            pre=pre*nums[i];
-        }
-        int post=1;
-        for(int i= nums.size()-1; i>=0; i--){
-            preprod[i]=preprod[i]*post;
-            post*=nums[i];
-        }
-        return preprod;
     }
 };
+int main(){
+    Solution s;
+    vector<int> nums={1,2,3,4};
+    vector<int> res=s.productExceptSelf(nums);
+    for(auto x:res){
+        cout<<x<<" ";
+    }
+    return 0;
+}
+        

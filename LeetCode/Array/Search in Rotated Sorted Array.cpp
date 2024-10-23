@@ -29,3 +29,9 @@ public:
         
     }
 };
+int main(){
+    Solution s;
+    vector<int> arr={4,5,6,7,0,1,2};
+    cout<<s.search(arr,0);
+    return 0;
+}
