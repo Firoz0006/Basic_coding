@@ -15,3 +15,14 @@ public:
         
     }
 };
+int main(){
+    Solution s;
+    vector<int> nums={2,7,11,15};
+    int target=9;
+    vector<int> res=s.twoSum(nums,target);
+    for(auto x:res){
+        cout<<x<<" ";
+    }
+
+}
+

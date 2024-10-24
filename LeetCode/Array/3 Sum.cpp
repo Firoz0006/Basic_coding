@@ -33,7 +33,7 @@ public:
 };
 int main(){
     Solution s;
-    vector<int> nums={-1,0,1,2,-1,-4};
+    vector<int> nums={-1,0,1,2,-1,-4,3};
     vector<vector<int>> res=s.threeSum(nums);
     for(auto x:res){
         for(auto y:x){
