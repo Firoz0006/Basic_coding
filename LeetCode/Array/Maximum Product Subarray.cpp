@@ -20,7 +20,7 @@ public:
 };
 int main(){
     Solution s;
-    vector<int>nums={2,3,-2,4};
+    vector<int>nums={2,3,-2,4};//output=2*3
     cout<<s.maxProduct(nums)<<endl;
     return 0;
 

@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-//3 Sum
+//3 Sum, nums[i]+nums[j]+nums[k]=0
 
 class Solution {
 public:
@@ -33,7 +33,7 @@ public:
 };
 int main(){
     Solution s;
-    vector<int> nums={-1,0,1,2,-1,-4,3};
+    vector<int> nums={-1,0,1,2,-1,-4};
     vector<vector<int>> res=s.threeSum(nums);
     for(auto x:res){
         for(auto y:x){
