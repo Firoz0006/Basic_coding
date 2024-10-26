@@ -28,7 +28,7 @@ public:
         }
         return NULL;
     }
-    
+
     ListNode* partionAndMerg(int start,int end,vector<ListNode*>& lists){
         if(start>end){
             return NULL;
@@ -37,10 +37,10 @@ public:
             return lists[start];
         }
         int mid = start+(end-start)/2;
-       ListNode* L1 =  partionAndMerg(start,mid,lists);
-       ListNode* L2 =  partionAndMerg(mid+1,end,lists);
+        ListNode* L1 =  partionAndMerg(start,mid,lists);
+        ListNode* L2 =  partionAndMerg(mid+1,end,lists);
 
-       return mergTwoSortedlist(L1,L2);
+        return mergTwoSortedlist(L1,L2);
 
     }
     ListNode* mergeKLists(vector<ListNode*>& lists) {
