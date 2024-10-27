@@ -1,0 +1,10 @@
+{
+    "cSpell.enableFiletypes": [
+        "!cpp"
+    ],
+    "files.associations": {
+        "sstream": "cpp",
+        "regex": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
+}

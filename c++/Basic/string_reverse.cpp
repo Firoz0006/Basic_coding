@@ -1,6 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+//Reverse a string
+
 int main(){
     string s;
     cout<<"enter the string:";
@@ -10,7 +12,9 @@ int main(){
     // 1) reverse(s.begin(),s.end());
     // cout<<s;
 
-    // 2) for(int i=s.size()-1;i>=0;i--){
+    //-----------------------------------------------------
+
+    //    for(int i=s.size()-1;i>=0;i--){
     //     cout<<s[i];
     // }
 //--------------------------------------------------
