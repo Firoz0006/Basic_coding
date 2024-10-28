@@ -12,7 +12,7 @@ int main(){//palindrom check using iterative method
     //     if(s[i]==s[j]){
     //         i++;
     //         j--;
-        
+    
     //     }
     //     else{
     //         cout<<"Not Palindrome";
