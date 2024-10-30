@@ -8,6 +8,7 @@ struct ListNode {
         ListNode(int x) : val(x), next(nullptr) {}
         ListNode(int x, ListNode *next) : val(x), next(next) {}
     };
+    //---------------------------------------------------
 class Solution {
 public:
     void reorderList(ListNode* head) {
@@ -41,14 +42,15 @@ public:
 
         }
         
-       dummy->next = NULL;
-       delete dummy;
+        dummy->next = NULL;
+        delete dummy;
 
 
 
         
     }
 };
+//---------------------------------------------------
 int main(){
     Solution s;
     ListNode* head=new ListNode(1);

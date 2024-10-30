@@ -17,3 +17,14 @@ public:
         return v;
     }
 };
+int main(){
+    Solution s;
+    vector<string> strs={"eat", "tea", "tan", "ate", "nat", "bat"};
+    vector<vector<string>> res=s.groupAnagrams(strs);
+    for(auto x:res){
+        for(auto y:x){
+            cout<<y<<" ";
+        }
+        cout<<endl;
+    }
+}

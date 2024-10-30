@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-//insert interval
+
 class Solution {
 public:
     vector<vector<int>> insert(vector<vector<int>>& inter, vector<int>& newInter) {
@@ -27,3 +27,16 @@ public:
         
     }
 };
+int main(){
+    Solution s;
+    vector<vector<int>> inter={{1,3},{6,9}};
+    vector<int> newInter={2,5};
+    vector<vector<int>> ans=s.insert(inter,newInter);
+    for(auto i:ans){
+        for(auto j:i){
+            cout<<j<<" ";
+        }
+        cout<<endl;
+    }
+    return 0;
+}

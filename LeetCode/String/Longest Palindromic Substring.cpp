@@ -32,3 +32,10 @@ public:
         
     }
 };
+int main(){
+    string s;
+    cout<<"Enter the string : ";
+    cin>>s;
+    Solution obj;
+    cout<<obj.longestPalindrome(s);
+}

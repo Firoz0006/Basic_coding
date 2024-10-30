@@ -1,35 +1,33 @@
 #include<bits/stdc++.h>
 using namespace std;
-//valid palindrome
+//valid palindrome example racecar,madam
 class Solution {
 public:
     bool isPalindrome(string s) {
-       int start=0;
-       int end=s.size()-1;
-       while(start<=end)
-       {
-            if(isalnum(s[start])==false)
-            {
-                start++;
-                continue;
+        vector<char> sen;
+        for(int i=0; i<s.size(); i++){
+            if(isalnum(s[i])){
+                sen.push_back(tolower(s[i]));
             }
-    
-            if(isalnum(s[end])==false)
-            {
-                end--;
-                continue;
-            }
-
-            char ch1=tolower(s[start]);
-            char ch2=tolower(s[end]);
-            cout << ch1 << " " <<ch2 << endl;
-            if(ch1!=ch2)
-            {
-                return false;
-            }
-            start++;
-            end--;
+        }
+        int n=sen.size();
+        
+        int low=0;
+        int high=n-1;
+        while(low < high){
+            if(sen[low] != sen[high])
+            return false;
+            low ++;
+            high --;
         }
         return true;
     }
 };
+int main(){
+    string s;
+    cout<<"Enter the string : ";
+    cin>>s;
+    Solution obj;
+    cout<<obj.isPalindrome(s);
+    return 0;
+}

@@ -19,3 +19,8 @@ public:
         return count;
     }
 };
+int main(){
+    Solution s; 
+    vector<vector<int>> inter={{1,2},{2,3},{3,4},{1,3}};
+    cout<<s.eraseOverlapIntervals(inter);
+}   

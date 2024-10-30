@@ -24,3 +24,7 @@ public:
         return ans;
     }
 };
+int main(){
+    Solution obj;
+    cout<<obj.characterReplacement("ABAB",2);
+}

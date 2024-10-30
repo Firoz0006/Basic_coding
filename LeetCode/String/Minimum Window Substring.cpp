@@ -11,21 +11,25 @@ public:
 
         while(j < n) {
             if(tmp[s[j]] > 0)
-              counter--;
-              tmp[s[j]]--;
-              j++;
+                counter--;
+                tmp[s[j]]--;
+                j++;
 
-              while(counter == 0) {
-                  if(j-i <minLen) {
-                      minStart = i;
-                      minLen = j - i;
-                  }
-                  tmp[s[i]]++;
-                  if(tmp[s[i]] > 0) 
-                  counter++;
-                  i++;
+                while(counter == 0) {
+                    if(j-i <minLen) {
+                        minStart = i;
+                        minLen = j - i;
+                    }
+                    tmp[s[i]]++;
+                    if(tmp[s[i]] > 0) 
+                    counter++;
+                    i++;
+                }
             }
-        }
         return (minLen != INT_MAX ? s.substr(minStart, minLen) : "");
     }
 };
+int main(){
+    Solution obj;
+    cout<<obj.minWindow("ADOBECODEBANC","ABC");
+}

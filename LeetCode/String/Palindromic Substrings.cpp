@@ -2,17 +2,36 @@
 using namespace std;
 //palindromic substrings
 class Solution {
-public: 
-    int n;
-    int f(int l, int r, string& s){
-        if (0>l || r>=n || s[l]!=s[r]) return 0;
-        else return 1+f(l-1, r+1, s);
+public:
+bool isPalindrome(const string& s, int start, int end) {
+    while (start < end) {
+        if (s[start] != s[end]) {
+            return false;
+        }
+        start++;
+        end--;
     }
-    int countSubstrings(string& s) {
-        n=s.size();
-        int N=2*n, ans=0;
-        for(int i=0; i<N; i++)
-            ans+=f(i/2, i/2+(i&1), s);
-        return ans;
+    return true;
+}
+int countSubstrings( string s) {
+    int n = s.length();
+    int count = 0;
+    for (int i = 0; i < n; ++i) {
+        for (int j = i; j < n; ++j) {
+            if (isPalindrome(s, i, j)) {
+                count++;
+            }
+        }
+    }
+    return count;
     }
 };
+int main()
+{
+    string s;
+    cout<<"Enter the string : ";
+    cin>>s;
+    Solution obj;
+    cout<<obj.countSubstrings(s);
+    return 0;   
+}
