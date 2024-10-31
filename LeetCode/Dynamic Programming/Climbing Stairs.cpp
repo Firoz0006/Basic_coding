@@ -22,6 +22,9 @@ public:
         }
         return dp[n];
     }
-};
-
+};int main(){
+    Solution obj;
+    cout<<obj.climbStairs(3);
+    return 0;
+}
         

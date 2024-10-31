@@ -21,3 +21,9 @@ private:
         return maxRob;
     }    
 };
+int main() {
+    Solution obj;
+    vector<int> nums = {1,2, 3, };
+    cout << obj.rob(nums);
+    return 0;
+}

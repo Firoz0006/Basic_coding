@@ -3,40 +3,49 @@ using namespace std;
 //find median from data stream
 class MedianFinder {
 public:
-    priority_queue<int, vector<int>, greater<int>> minH;
-    priority_queue<int> maxH;
-    MedianFinder() {
-        
-    }
-    
-    void addNum(int num) {
-        if(maxH.size() == 0 || maxH.top() >= num)
-            maxH.push(num);
-        else
-            minH.push(num);
+    multiset<int> ms;
+    multiset<int>::iterator mid; 
 
-        if(maxH.size() > minH.size() + 1){
-            minH.push(maxH.top());
-            maxH.pop();
+    MedianFinder() {
+        mid = ms.end();
+    }
+
+    void addNum(int num) {
+        int n = ms.size();
+        ms.insert(num);
+
+        if (n == 0) {
+            mid = ms.begin(); 
         }
-        else if(maxH.size() < minH.size()){
-            maxH.push(minH.top());
-            minH.pop();
+        else if (n&1) {
+            if (num < *mid) { 
+                mid--;
+            }
+        } 
+        else {
+            if (num>=*mid) { 
+                mid++;
+            }
         }
     }
-    
+
     double findMedian() {
-        if(maxH.size() == minH.size()){
-            return (double)((maxH.top() + minH.top()) / 2.0);
+        int n = ms.size();
+
+        if (n % 2 != 0) {
+            return *mid;
         }
-        else
-            return maxH.top();
+
+        auto next_mid = next(mid);
+        return (*mid + *next_mid) / 2.0;
     }
 };
-
-/**
- * Your MedianFinder object will be instantiated and called as such:
- * MedianFinder* obj = new MedianFinder();
- * obj->addNum(num);
- * double param_2 = obj->findMedian();
- */
+int main() {
+    MedianFinder* obj = new MedianFinder();
+    obj->addNum(1);
+    obj->addNum(2);
+    cout << obj->findMedian() << endl;
+    obj->addNum(3);
+    cout << obj->findMedian() << endl;
+    return 0;
+}

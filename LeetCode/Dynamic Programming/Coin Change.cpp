@@ -17,3 +17,10 @@ public:
         return dp[target]!=target+1 ? dp[target] : -1;
     }
 };
+int main(){
+    Solution s;
+    vector<int> coins={1,2,5};
+    int target=11;
+    cout<<s.coinChange(coins,target);
+    return 0;
+}

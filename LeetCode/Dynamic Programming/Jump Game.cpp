@@ -12,3 +12,9 @@ public:
         return false;
     }
 };
+int main(){
+    Solution obj;
+    vector<int> nums={2,3,1,1,4};
+    cout<<obj.canJump(nums);
+    return 0;
+}

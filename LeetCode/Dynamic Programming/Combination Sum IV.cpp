@@ -25,3 +25,9 @@ public:
         return combinationSum4Helper(nums,target);
     }
 };
+int main(){
+    Solution obj;
+    vector<int> nums={1,2,3};
+    cout<<obj.combinationSum4(nums,4);
+    return 0;
+}

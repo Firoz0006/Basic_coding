@@ -22,3 +22,8 @@ public:
         return ans;
     }
 };
+int main(){
+    Solution obj;
+    cout<<obj.longestCommonSubsequence("abcde","ace");
+    return 0;
+}

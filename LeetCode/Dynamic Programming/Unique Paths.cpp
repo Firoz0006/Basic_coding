@@ -18,3 +18,10 @@ public:
         return unique(m,n,dp);
     }
 };
+int main(){
+    int m,n;
+    cin>>m>>n;
+    Solution obj;
+    cout<<obj.uniquePaths(m,n);
+    return 0;
+}

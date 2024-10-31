@@ -26,3 +26,12 @@ public:
         return topkf;
     }
 };
+int main(){
+    Solution obj;
+    vector<int> nums={1,1,1,2,2,3};
+    vector<int> res=obj.topKFrequent(nums,2);
+    for(auto x:res){
+        cout<<x<<" ";
+    }
+    return 0;
+}

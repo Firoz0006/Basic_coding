@@ -11,10 +11,10 @@ public:
         char temp = board[i][j];
         board[i][j] = '.';
         
-        bool found = helper(board, word, i + 1, j, k + 1, n, m) ||
-                     helper(board, word, i - 1, j, k + 1, n, m) ||
-                     helper(board, word, i, j + 1, k + 1, n, m) ||
-                     helper(board, word, i, j - 1, k + 1, n, m);
+            bool found = helper(board, word, i + 1, j, k + 1, n, m) ||
+                        helper(board, word, i - 1, j, k + 1, n, m) ||
+                        helper(board, word, i, j + 1, k + 1, n, m) ||
+                        helper(board, word, i, j - 1, k + 1, n, m);
         
         board[i][j] = temp;
         return found;
@@ -35,3 +35,10 @@ public:
         return false;
     }
 };
+
+int main(){
+    Solution obj;
+    vector<vector<char>>board={{'A','B','C','E'},{'S','F','C','S'},{'A','D','E','E'}};
+    string word="ABCCED";
+    cout<<obj.exist(board,word);
+}

@@ -23,3 +23,10 @@ public:
         return dp[0];
     }
 };
+int main() {
+    Solution obj;
+    string s = "catsanddog";
+    vector<string> wordDict = {"cats", "dog", "sand", "and", "cat"};
+    cout << obj.wordBreak(s, wordDict);
+    return 0;
+}
