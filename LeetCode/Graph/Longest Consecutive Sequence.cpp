@@ -3,24 +3,36 @@ using namespace std;
 //longest consecutive sequence
 class Solution {
 public:
-    int longestConsecutive(vector<int>& nums) 
-    {
-        int ans = 0, cur_num, cur_stack;
-        unordered_set<int> numbers(begin(nums), end(nums));
-        for(auto num:numbers)
-        {
-            if(numbers.find(num - 1) == numbers.end())
-            {
-                cur_num = num;
-                cur_stack = 1;
-                while(numbers.count(cur_num + 1))
-                {
-                    cur_num += 1;
-                    cur_stack += 1;
-                }
-                ans = max(ans, cur_stack);
+    int longestConsecutive(vector<int>& nums) {
+        int n = nums.size();
+        if(n== 0 ){
+            return 0;
+        }
+
+        sort(nums.begin(),nums.end());
+
+        int longest = 1 ;
+        int cnt = 1;
+
+        for(int i = 1; i<n ; i++){
+            if(nums[i] == nums[i-1]){
+                continue;
+            }
+
+            if(nums[i] == nums[i - 1]+1){
+                cnt++;
+            }
+            else{
+                longest = max(longest , cnt);
+                cnt = 1;
             }
         }
-        return ans;
+        return max(longest,cnt);
     }
 };
+int main(){
+    Solution obj;
+    vector<int> nums={100,4,200,1,3,2};
+    cout<<obj.longestConsecutive(nums);
+    return 0;
+}

@@ -1,30 +1,56 @@
 #include<bits/stdc++.h>
 using namespace std;
-
-//serialize and deserialize binary tree
+ // Definition for a binary tree node.
+    struct TreeNode {
+        int val;
+        TreeNode *left;
+        TreeNode *right;
+        TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+};
 class Codec {
 public:
 
-    // Encodes a tree to a single string.
     string serialize(TreeNode* root) {
-        if (!root) return "#,";
-        return to_string(root->val)+","+ serialize(root->left) + serialize(root->right);
+        ostringstream out;
+        serialize(root, out);
+        return out.str();
     }
 
-    // Decodes your encoded data to tree.
     TreeNode* deserialize(string data) {
-        if (data == "#,") return nullptr;
-        stringstream s(data);
-        return helper(s);
+        istringstream in(data);
+        return deserialize(in);
     }
 
-    TreeNode* helper (stringstream & s) {
-        string str;
-        getline(s, str, ',');
-        if (str == "#") return nullptr;
-        TreeNode* root = new TreeNode (stoi(str));
-        root->left = helper(s);
-        root->right = helper(s);
+private:
+
+    void serialize(TreeNode* root, ostringstream& out) {
+        if (root) {
+            out << root->val << ' ';
+            serialize(root->left, out);
+            serialize(root->right, out);
+        } else {
+            out << "# ";
+        }
+    }
+
+    TreeNode* deserialize(istringstream& in) {
+        string val;
+        in >> val;
+        if (val == "#")
+            return nullptr;
+        TreeNode* root = new TreeNode(stoi(val));
+        root->left = deserialize(in);
+        root->right = deserialize(in);
         return root;
     }
 };
+int main(){
+    Codec obj;
+    TreeNode* root = new TreeNode(3);
+    root->left = new TreeNode(9);
+    root->right = new TreeNode(20);
+    root->right->left = new TreeNode(15);
+    root->right->right = new TreeNode(7);
+    string ans = obj.serialize(root);
+    cout<<ans;
+}

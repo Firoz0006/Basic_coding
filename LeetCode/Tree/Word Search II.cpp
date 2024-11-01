@@ -1,50 +1,84 @@
 #include<bits/stdc++.h>
 using namespace std;
 //word search II
-class Solution {
-public:
-    struct TrieNode {
-        vector<TrieNode*> child;
-        string word;
-        TrieNode() : word(""), child(vector<TrieNode*>(26, nullptr)) {}
-    };
-    
-    TrieNode* buildTrie(vector<string>& words) {
-        TrieNode* root = new TrieNode();
-        for (string w : words) {
-            TrieNode* curr = root;
-            for (char c : w) {
-                int i = c - 'a';
-                if (curr->child[i] == NULL) curr->child[i] = new TrieNode();
-                curr = curr->child[i];
-            }
-            curr->word = w;
-        }
-        return root;
-    }
 
-    vector<string> findWords(vector<vector<char>>& board, vector<string>& words) {
-        vector<string> out;
-        TrieNode* root = buildTrie(words);
-        for(int i = 0; i < board.size(); ++i) 
-            for(int j = 0; j < board[0].size(); ++j) 
-                dfs(board, i, j, root, out);
-        return out;
+    
+    class Solution {
+private:
+    struct TrieNode {
+        TrieNode* children[26];
+        string word;
+
+        TrieNode() {
+            memset(children, 0, sizeof(children));
+            word = "";
+        }
+    };
+
+    void buildTrie(TrieNode *root, const vector<string> &words) {
+        for (const string &word : words) {
+            TrieNode *curr = root;
+            for (char ch : word) {
+                int idx = ch - 'a';
+                if (!curr->children[idx]) {
+                    curr->children[idx] = new TrieNode();
+                }
+                curr = curr->children[idx];
+            }
+            curr->word = word;
+        }
     }
     
-    void dfs(vector<vector<char>>& board, int i, int j, TrieNode* curr, vector<string>& out) {
-        char c = board[i][j];
-        if(c == '#' || curr->child[c - 'a'] == NULL) return;
-        curr = curr->child[c - 'a'];
-        if (curr->word != "") {
-            out.push_back(curr->word);
-            curr->word = "";
+public:
+    vector<string> findWords(vector<vector<char>>& board, vector<string>& words) {
+        int m = board.size(), n = board.front().size();
+        array<int, 5> DIR = {0, 1, 0, -1, 0};
+        vector<string> result;
+        TrieNode *root = new TrieNode();
+        buildTrie(root, words);
+
+       function<void(int, int, TrieNode*)> btrack = [&](int i, int j, TrieNode *curr) -> void {
+            if (i < 0 || i >= m || j < 0 || j >= n || board[i][j] == '#' || !curr) {
+                return;
+            }
+
+            char ch = board[i][j];
+            curr = curr->children[ch - 'a'];
+            if (!curr) return;
+            
+            if (!curr->word.empty()) {
+                result.emplace_back(curr->word);
+                curr->word.clear();
+            }
+
+            board[i][j] = '#';
+            for (int d = 0; d < 4; ++d) {
+                btrack(i + DIR[d], j + DIR[d + 1], curr);
+            }
+            board[i][j] = ch;
+        };
+
+        for (int i = 0; i < m; ++i) {
+            for (int j = 0; j < n; ++j) {
+                btrack(i, j, root);
+            }
         }
-        board[i][j] = '#';
-        if(i > 0) dfs(board, i - 1, j , curr, out); 
-        if(j > 0) dfs(board, i, j - 1, curr, out);
-        if(i < board.size() - 1) dfs(board, i + 1, j, curr, out); 
-        if(j < board[0].size() - 1) dfs(board, i, j + 1, curr, out); 
-        board[i][j] = c;
+
+        return result;
     }
 };
+int main() {
+    Solution obj;
+    vector<vector<char>> board = {
+        {'o','a','a','n'},
+        {'e','t','a','e'},
+        {'i','h','k','r'},
+        {'i','f','l','v'}
+    };
+    vector<string> words = {"oath","pea","eat","rain"};
+    vector<string> res = obj.findWords(board, words);
+    for (auto x : res) {
+        cout << x << " ";
+    }
+    return 0;
+}

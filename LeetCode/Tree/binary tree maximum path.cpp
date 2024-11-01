@@ -1,6 +1,14 @@
 #include<bits/stdc++.h>
 using namespace std;
 //binary tree maximum path sum
+
+struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode() : val(0), left(nullptr), right(nullptr) {};
+    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {};
+};
 class Solution {
     int answer;
     // max path going down
@@ -20,3 +28,11 @@ public:
         return answer;
     }
 };
+int main() {
+    Solution obj;
+    TreeNode* root = new TreeNode(1);
+    root->left = new TreeNode(2);
+    root->right = new TreeNode(3);
+    cout << obj.maxPathSum(root) << endl;
+    return 0;
+}

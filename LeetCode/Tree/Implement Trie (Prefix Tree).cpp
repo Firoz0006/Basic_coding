@@ -1,41 +1,37 @@
 #include<bits/stdc++.h>
 using namespace std;
 //implement Trie
-class TrieNode {
-public:
-    TrieNode *child[26];
-    bool isWord;
-    TrieNode() {
-        isWord = false;
-        for (auto &a : child) a = nullptr;
-    }
-};
+
+  //Your Trie object will be instantiated and called as such:
+  
+    
 class Trie {
-    TrieNode* root;
 public:
+    set<string> s;
     Trie() {
-        root = new TrieNode();
+        
     }
-    void insert(string s) {
-        TrieNode *p = root;
-        for (auto &a : s) {
-            int i = a - 'a';
-            if (!p->child[i]) p->child[i] = new TrieNode();
-            p = p->child[i];
-        }
-        p->isWord = true;
+    
+    void insert(string word) {
+        s.insert(word);
     }
-    bool search(string key, bool prefix=false) {
-        TrieNode *p = root;
-        for (auto &a : key) {
-            int i = a - 'a';
-            if (!p->child[i]) return false;
-            p = p->child[i];
-        }
-        if (prefix==false) return p->isWord;
-        return true;
+    
+    bool search(string word) {
+        return s.find(word)!=s.end();
     }
+    
     bool startsWith(string prefix) {
-        return search(prefix, true);
+        auto it=s.lower_bound(prefix);
+        if(it==s.end()){
+            return false;
+        }
+        for(int i=0;i<prefix.size();i++){
+            if(prefix[i]!= (*it)[i]){
+                return false;
+            }
+        }
+        return true;
+        
     }
 };
+
