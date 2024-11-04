@@ -18,3 +18,9 @@ public:
 private:
     unordered_map<Node*, Node*> copies;
 };
+int main(){
+    Solution obj;
+    cout<<obj.cloneGraph();
+    return 0;
+
+}
