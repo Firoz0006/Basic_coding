@@ -33,3 +33,9 @@ public:
         return true;
     }
 };
+int main() {
+    Solution s;
+    vector<vector<int>> prerequisites = {{1,0},{0,1}};
+    cout << s.canFinish(2, prerequisites) << endl;
+    return 0;
+}
