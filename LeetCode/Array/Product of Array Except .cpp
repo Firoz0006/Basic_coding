@@ -20,13 +20,13 @@ public:
 
     }
 };
-int main(){
-    Solution s;
-    vector<int> nums={1,2,3,4};
-    vector<int> res=s.productExceptSelf(nums);
-    for(auto x:res){
-        cout<<x<<" ";
-    }
-    return 0;
-}
+// int main(){
+//     Solution s;
+//     vector<int> nums={1,2,3,4};
+//     vector<int> res=s.productExceptSelf(nums);
+//     for(auto x:res){
+//         cout<<x<<" ";
+//     }
+//     return 0;
+// }
         
