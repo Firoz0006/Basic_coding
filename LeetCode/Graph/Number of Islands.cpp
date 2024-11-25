@@ -22,7 +22,7 @@ public:
         if(grid[i][j] != '1')
             return;
         else
-            grid[i][j] = '2';
+        grid[i][j] = '2';
         dfs(grid,i-1,j);
         dfs(grid,i+1,j);
         dfs(grid,i,j+1);
