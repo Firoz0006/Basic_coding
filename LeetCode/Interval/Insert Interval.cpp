@@ -1,6 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+//insert interval
+// if overlap then merge interval
+
 class Solution {
 public:
     vector<vector<int>> insert(vector<vector<int>>& inter, vector<int>& newInter) {
