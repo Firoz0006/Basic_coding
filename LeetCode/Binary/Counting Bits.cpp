@@ -23,3 +23,18 @@ public:
         return result;
     }
 };
+//--------------------------------------------------------------------------------
+//second Method
+class Solution {
+public:
+    vector<int> countBits(int n) {
+        vector<int> result(n + 1);
+        result[0] = 0; // Base case
+
+        for (int i = 1; i <= n; ++i) {
+            result[i] = result[i & (i - 1)] + 1; // Use bitwise operation to calculate
+        }
+
+        return result;
+    }
+};

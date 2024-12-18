@@ -22,16 +22,16 @@ public:
         if(grid[i][j] != '1')
             return;
         else
-            grid[i][j] = '2';
+        grid[i][j] = '2';
         dfs(grid,i-1,j);
         dfs(grid,i+1,j);
         dfs(grid,i,j+1);
         dfs(grid,i,j-1);
     }
 };
-int main(){
-    Solution obj;
-    vector<vector<char>> grid={{'1','1','0','0','0'},{'1','1','0','0','0'},{'0','0','1','0','0'},{'0','0','0','1','1'}};
-    cout<<obj.numIslands(grid);
-    return 0;
-}
+// int main(){
+//     Solution obj;
+//     vector<vector<char>> grid={{'1','1','0','0','0'},{'1','1','0','0','0'},{'0','0','1','0','0'},{'0','0','0','1','1'}};
+//     cout<<obj.numIslands(grid);
+//     return 0;
+// }

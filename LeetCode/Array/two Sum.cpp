@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-//Two sum Leetcode Problem
+//Two sum Leetcode Problem,target sum=9 index 0,1
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {

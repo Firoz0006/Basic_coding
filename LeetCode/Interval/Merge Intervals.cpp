@@ -22,14 +22,14 @@ public:
         
     }
 };
-int main(){
-    Solution s;
-    vector<vector<int>> inter={{1,3},{2,6},{8,10},{15,18}};
-    vector<vector<int>> ans=s.merge(inter);
-    for(auto i:ans){
-        for(auto j:i){
-            cout<<j<<" ";
-        }
-        cout<<endl;
-    }
-}
+// int main(){
+//     Solution s;
+//     vector<vector<int>> inter={{1,3},{2,6},{8,10},{15,18}};
+//     vector<vector<int>> ans=s.merge(inter);
+//     for(auto i:ans){
+//         for(auto j:i){
+//             cout<<j<<" ";
+//         }
+//         cout<<endl;
+//     }
+// }

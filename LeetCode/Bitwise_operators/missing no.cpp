@@ -1,5 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
+
+//missing no in array of n elements
 class Solution {
 public:
     int missingNumber(vector<int>& nums) {
