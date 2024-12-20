@@ -26,6 +26,7 @@ public:
         return temp;
     }
  
+
     void out() 
     {
     cout<<"The fraction is  "<< a<<"/ "<<b;

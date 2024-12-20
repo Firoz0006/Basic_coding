@@ -6,13 +6,15 @@ using namespace std;
 // base class
 class Vehicle {
 public:
-	Vehicle() { cout << "This is a Vehicle\n"; }
+	Vehicle() { 
+		cout << "This is a Vehicle\n"; }
 };
 
 // base class
 class Fare {
 public:
-	Fare() { cout << "Fare of Vehicle\n"; }
+	Fare() {
+	    cout << "Fare of Vehicle\n"; }
 };
 
 // first sub class

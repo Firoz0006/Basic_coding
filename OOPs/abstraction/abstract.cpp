@@ -1,6 +1,9 @@
-// C++ Program to Demonstrate the
-// working of Abstraction
-//#include <iostream>
+// C++ Program to Demonstrate the working of Abstraction
+//Data abstraction is the process of hiding certain details and showing only essential
+//information to the user. Abstraction can be achieved with either abstract classes or interfaces.
+//Abstract class: is a restricted class that cannot be used to create objects
+//Abstract method: can only be used in an abstract class, and it does not have a body. The body is provided by the derived 
+//class (inherited from).
 #include<bits/stdc++.h>
 using namespace std;
 
