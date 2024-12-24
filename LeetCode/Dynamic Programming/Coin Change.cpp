@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-//coin change
+//coin change 11=5+5+1
 class Solution {
 public:
     int coinChange(vector<int>& coins, int target) {

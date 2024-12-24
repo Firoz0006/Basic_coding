@@ -3,7 +3,6 @@ using namespace std;
 //implement Trie
 
   //Your Trie object will be instantiated and called as such:
-  
     
 class Trie {
 public:

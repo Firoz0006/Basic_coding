@@ -1,19 +1,31 @@
-#include<bits/stdc++.h>
+
 //simple inheritance example
+//Defination:-A class can inherit the properties of another class.
+//In C++, it is possible to inherit attributes and methods from one class to another. 
+//We group the "inheritance concept" into two categories:
+//Derived(Child) Class - the class that inherits from another class
+//Base (Parent) Class - the class being inherited from
+#include<bits/stdc++.h>
 using namespace std;
-class A
-{
+
+//Base class(parent class)
+class vehicle{
 	public:
-	void func()
-	{
-		cout<<"inherited";
+	string brand = "Ford";
+	void honk(){
+		cout<<"Tuut, tuut!"<<endl;
 	}
 };
-class B :public A {
 
+//Derived class(child class)
+class car: public vehicle{
+	public:
+	string model = "Mustang";
 };
 
 int main(){
-	B b;
-	b.func();
+	car mycar;
+	mycar.honk();
+	cout<<mycar.brand<<" "<<mycar.model<<endl;
+	return 0;
 }
