@@ -1,22 +1,11 @@
 #include<bits/stdc++.h>
 using namespace std;
-
-class cars{
-    public:
-    string car_name;
-    int car_price;
-    cars(string name, int price){//constructor
-        car_name=name;
-        car_price=price;
-    }
-    void display(){
-        cout<<"Car name: "<<car_name<<endl;
-        cout<<"Car price: "<<car_price<<endl;
-    }
-};
-
 int main(){
-    cars c1("BMW", 100);
-    c1.display();
+    vector<int> v = {6,2,7,3,8,4,5};
+
+    sort(v.rbegin(), v.rend());
+    for(int i=0;i<v.size();i++){
+        cout<<v[i]<<" ";
+    }
     return 0;
 }
