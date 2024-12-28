@@ -29,7 +29,7 @@ public:
 
 int main()
 {
-	implementAbstraction obj;
+	implementAbstraction obj;//output will be a=10 and b=20
 	obj.set(10, 20);
 	obj.display();
 	return 0;

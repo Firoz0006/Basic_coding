@@ -18,3 +18,9 @@ public:
     }
         
 };
+int main()
+{
+    Solution obj;
+    cout<<obj.hammingWeight(11);
+    return 0;
+}

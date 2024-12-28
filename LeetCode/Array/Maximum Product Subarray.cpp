@@ -1,10 +1,10 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-//Maximum SubArray 
+//Maximum product SubArray 
 class Solution {
 public:
-    int maxProduct(vector<int>& nums) {
+    int maxProduct(vector<int>& nums){
         int res = INT_MIN;
         int start = 1,n=nums.size(),end = 1;
 
