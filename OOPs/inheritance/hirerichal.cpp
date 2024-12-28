@@ -5,8 +5,7 @@
 using namespace std;
 
 // base class
-class Vehicle
-{
+class Vehicle {
 public:
 	Vehicle() { cout << "This is a Vehicle\n"; }
 };
@@ -14,6 +13,7 @@ public:
 // first sub class
 class Car : public Vehicle
 {
+	public:
 	Car()
 	{
 		cout << "Car constructor" << endl;
@@ -23,6 +23,11 @@ class Car : public Vehicle
 // second sub class
 class Bus : public Vehicle
 {
+	public:
+	Bus()
+	{
+		cout << "Bus constructor" << endl;
+	}
 };
 
 // main function
