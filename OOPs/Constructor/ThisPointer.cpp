@@ -1,3 +1,10 @@
+//This pointer: ii is  a pointer which points to the current object of the class.
+// This pointer is used to access the member variables and member functions of the class.
+// This pointer is used to differentiate between the class members and the parameters with the same name.
+// This pointer is used to return the current object of the class from the member function.
+// This pointer is used to access the address of the current object.
+//
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -50,8 +57,5 @@ int main()
     Teacher t2(t1);// default copy constructor invoked/call
     t2.getInfo();
 
-    //t1.changeDept("EEE");
-   // cout<<t1.dept<<endl;
     return 0;
-/******  5e5f749c-353a-4d6e-80f7-72b892324df0  *******/
 }

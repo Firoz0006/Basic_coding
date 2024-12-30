@@ -9,23 +9,23 @@ class Frac {
 public:
     Frac() : a(0), b(0) {}
     void in()
-     {
+    {
         //cout << "Enter the numerator : "<<endl;
         cin >> a>>b;
         //cout<< "Enter the denominator : "<<endl;
         // cin >> b;
-     }
- 
+        }
+
     // Overload the * operator
     Frac operator * (const Frac &obj)
-     {
+    {
         Frac temp;
         temp.a = a * obj.a;
         temp.b = b * obj.b;
         
         return temp;
     }
- 
+
     void out() 
     {
     cout<<"The fraction is  "<< a<<"/ "<<b;

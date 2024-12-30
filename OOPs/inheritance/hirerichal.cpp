@@ -5,8 +5,7 @@
 using namespace std;
 
 // base class
-class Vehicle
-{
+class Vehicle {
 public:
 	Vehicle() { cout << "This is a Vehicle\n"; }
 };
