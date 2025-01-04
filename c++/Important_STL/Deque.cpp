@@ -6,7 +6,6 @@
 //It is used in many applications like implementing stack, queue, double-ended queue, etc.
 //Deque is implemented using array or linked list.
 //Operations: push_back(),push_front(),pop_back(),pop_front(),front(),back(),empty(),size()
-//It is used in many applications like implementing 
 
 #include<bits/stdc++.h>
 #include<deque>//include the deque library in header file

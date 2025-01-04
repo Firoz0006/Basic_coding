@@ -15,8 +15,7 @@ int main(){
         while(!pq.empty()){
             cout<<pq.top()<<" ";
             pq.pop();
-            
-            
+        
         }
 
     return 0;
