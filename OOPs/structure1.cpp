@@ -4,9 +4,9 @@ using namespace std;
 typedef struct employee {//structure is a user-defined data type in C/C++.
 //It is used to store a collection of data of different data types.
 //Typedef:- The typedef keyword is used to give a new name to a type.
-    int id;
-    string name;
-    double salary;
+    int id;//4 bytes
+    string name;//8 bytes
+    double salary;//8 bytes
 } ep;
 
 

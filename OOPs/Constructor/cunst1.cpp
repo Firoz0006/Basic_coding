@@ -1,3 +1,8 @@
+// Constructor: is a special member function that is /invoked automatically  when an object is created.
+// Constructor is used to initialize the object of a class.
+// Constructor has the same name as the class.
+// Constructor does not have a return type.
+
 #include<bits/stdc++.h>
 using namespace std;
 
