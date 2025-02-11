@@ -8,8 +8,15 @@
 using namespace std;
 
 class implementAbstraction {
-private:
+
 	int a, b;
+
+	protected:
+	void display()
+	{
+		cout << "a = " << a << endl;
+		cout << "b = " << b << endl;
+	}
 
 public:
 	// method to set values of
@@ -20,11 +27,11 @@ public:
 		b = y;
 	}
 
-	void display()
-	{
-		cout << "a = " << a << endl;
-		cout << "b = " << b << endl;
-	}
+	// void display()
+	// {
+	// 	cout << "a = " << a << endl;
+	// 	cout << "b = " << b << endl;
+	// }
 };
 
 int main()

@@ -1,4 +1,4 @@
-#include<bits/stdc++.h?
+#include<bits/stdc++.h>
 using namespace std;
 
 
@@ -14,6 +14,7 @@ class student {
         cout<<"course:"<<course<<endl;
     }    
 };
+
 
 int main(){
     student s1; 

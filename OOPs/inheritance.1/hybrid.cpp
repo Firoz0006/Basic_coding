@@ -15,7 +15,7 @@ public:
 	Fare() { cout << "Fare of Vehicle\n"; }
 };
 
-// first sub class
+// first sub class/derived class
 class Car : public Vehicle {
 };
 
